@@ -71,6 +71,18 @@ Passages.configure do |config|
 end
 ```
 
+## Caching
+
+If you have a large number of routes, it is recommended to enable caching to ensure faster rendering of the page. The caching will use the default cache_store for your application.
+
+To enable caching, create or add to the `initializers/passages.rb` file:
+
+```ruby
+Passages.configure do |config|
+  config.cache = true
+end
+```
+
 ## Contributing
 
 Please feel free to fork and contribute your own changes to the Passages project. Single commits are preferred with a description of why the contribution is useful.

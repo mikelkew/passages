@@ -1,4 +1,5 @@
 require_relative 'route'
+require 'digest/md5'
 
 module Passages
   class RouteCollection
@@ -12,6 +13,10 @@ module Passages
 
     def each(&block)
       Array(routes).each(&block)
+    end
+
+    def cache_key
+      "routes/" + Digest::MD5.hexdigest(@routes.to_a.to_s)
     end
 
     private

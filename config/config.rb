@@ -1,10 +1,14 @@
 module Passages
   class Config
     attr_accessor :automount
-    attr_writer :no_auth
+    attr_writer :no_auth, :cache
 
     def no_auth?
       !!@no_auth
+    end
+
+    def cache?
+      !!@cache
     end
   end
 
