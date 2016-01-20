@@ -22,21 +22,21 @@ module Passages
       end
     end
 
-    describe '#cache?' do
-      context '@cache is a truthy value' do
+    describe '#enable_cache?' do
+      context '@enable_cache is a truthy value' do
         [true, 'yes', ['1'], { a: :b }].each do |value|
           it "#{ value } returns true" do
-            Passages.config.cache = value
-            expect(Passages.config.cache?).to eq(true)
+            Passages.config.enable_cache = value
+            expect(Passages.config.enable_cache?).to eq(true)
           end
         end
       end
 
-      context '@cache is a falsey value' do
+      context '@enable_cache is a falsey value' do
         [false, nil].each do |value|
           it "#{ value } returns false" do
-            Passages.config.cache = value
-            expect(Passages.config.cache?).to eq(false)
+            Passages.config.enable_cache = value
+            expect(Passages.config.enable_cache?).to eq(false)
           end
         end
       end
